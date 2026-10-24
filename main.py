@@ -1,4 +1,5 @@
 import sqlite3
+import datetime
 
 conn = sqlite3.connect("book.db")
 cur = conn.cursor()
@@ -69,7 +70,7 @@ def search_book_title(title):
 
 
 def update_quantity():
-    title = input("enter the name of title to update: ")
+    title = input("enter the name of Book title to update: ")
     cur.execute("select id from Book where title = (?)", (title,))
     row = cur.fetchone()
     if row:
@@ -166,12 +167,22 @@ def show_report():
     print("Total Inventory Value  :", total_value, "$")
     print("Free Books             :", free_books)
     print("------- Low Stock -------")
+
     if low_stock:
         for row in low_stock:
             print(" -", row[0], ":", row[1], "copies")
     else:
         print("All books are well stocked!")
     print("============================")
+    with open(f"report_{datetime.date.today()}", "a") as file:
+        file.write(f"""
+========== Report ========== 
+Total Books            :{books} 
+Total Inventory Value  :{total_value}$   
+Free Books             :{free_books }
+------- Low Stock -------  
+{row[0]}:{row[1]}copies 
+                   """)
 
 
 def sell_book():
