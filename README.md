@@ -7,7 +7,8 @@ Version History:
   v1.0 - 20/6/2026 : Basic structure and database design
   v2.0 - 21/6/2026 : Add, Search, and Show books
   v3.0 - 22/6/2026 : Update, Sell, and Report features
-  v4.0 - 24/6/2026 : Final version (last update)
+  v4.0 - 24/6/2026 : make some improve
+  v5.0 - 01/10/2026 : generate text file for report features with current date (last update)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 BookShelf Manager is a command-line inventory system 
@@ -21,10 +22,12 @@ Features:
 - Update book quantity and price
 - Sell books with automatic stock tracking
 - Generate inventory reports
+- Generate inventory reports with text file followed by current date
 
 Technologies Used:
 - Python 3
 - SQLite3 (database)
+- Files
 
 What I Learned:
 - Database design with relationships (Foreign Keys)
