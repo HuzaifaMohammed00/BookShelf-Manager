@@ -1,3 +1,5 @@
+# the old v
+# this is not working well got to bookshelf_manager.py
 import sqlite3
 import datetime
 
